@@ -11,7 +11,7 @@ void ini()
     {
         for(int y = 0;y < _y;y++)
         {
-            desenho[x][y]= '.';
+            desenho[x][y]= ' ';
             if(x == 0 or x == _x -1)
                 desenho[x][y]= '*';
             if(y == 0 or y == _y -1)
@@ -110,27 +110,18 @@ int main()
         //endUpdate
         window.clear(sf::Color::Blue);
 
-        text.setPosition(0,660);
-        text.setString("Move:< ^ v >");
-        window.draw(text);
-        //clear all
-        text.setPosition(0,630);
-        text.setString("Backspace=clearAll");
-        window.draw(text);
-
-        window.draw(text);
         text.setPosition(0,600);
-        text.setString("Type the character: ");
+        text.setString("Type the character:\n"
+        "Backspace=clearAll\n"
+        "Enter=change\n"
+        "Move:< ^ v");
         window.draw(text);
         //draw movement
         text.setPosition(x_nav*30,y_nav*30);
         text.setString(nav);
         window.draw(text);
 
-        text.setPosition(0,690);
-        text.setString("Enter=change");
-        window.draw(text);
-
+    
         for(int x = 0;x < _x;x++)
         {
             for(int y = 0;y < _y;y++)
